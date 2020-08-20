@@ -1,7 +1,7 @@
 {{ $title := .Title }}
 
 {{ with site.Params.sidebar }}
-<aside>
+<aside class="u-padding">
   {{ range .blocks }}
   <section>
     {{ if eq . "name" }}
