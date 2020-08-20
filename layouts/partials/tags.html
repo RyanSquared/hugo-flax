@@ -12,7 +12,7 @@
       {{ if isset $.Params $taxonomy }}
         <ul class="Tags">
           {{ range $.GetTerms $taxonomy }}
-            <li class="Tags-item u-background">
+            <li class="Tags-item u-background-accent">
               <a class="Tags-link u-clickable" href="{{ .RelPermalink }}" rel="tag">{{ .LinkTitle }}</a>
             </li>
           {{ end }}

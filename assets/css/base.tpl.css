@@ -136,8 +136,13 @@ article {
 }
 
 .u-background {
-  background: {{ site.Params.color }};
+  background: {{ site.Params.primaryColor }};
 }
+
+.u-background-accent {
+  background: {{ site.Params.accentColor }};
+}
+
 
 .u-clickable {
   font-weight: bold;
