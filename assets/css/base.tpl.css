@@ -1,14 +1,22 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 main {
+  {{ with site.Params.width }}max-width: {{ . }};{{ end }}
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  grid-column-gap: 4rem;
+}
+
+main div.list {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -25,6 +33,13 @@ pre {
 
 code {
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+article {
+  background-color: #EEEEEE;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 
 .Banner {
@@ -63,7 +78,7 @@ code {
 }
 
 .Heading-title {
-  margin: 1.5rem 0.5rem 0 0;
+  margin: 0 0.5rem 0 0;
 }
 
 .Heading-link {
@@ -74,8 +89,8 @@ code {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 1.5rem 0;
+  justify-content: left;
+  margin: 0;
   padding: 0;
 }
 
@@ -114,11 +129,6 @@ code {
 .Footer {
   text-align: center;
   margin: 1rem 0;
-}
-
-.u-wrapper {
-  {{ with site.Params.width }}max-width: {{ . }};{{ end }}
-  margin: auto;
 }
 
 .u-padding {

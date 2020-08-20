@@ -1,0 +1,45 @@
+{{ $title := .Title }}
+
+{{ with site.Params.sidebar }}
+<aside>
+  {{ range .blocks }}
+  <section>
+    {{ if eq . "name" }}
+      <h2>{{ $.Site.Params.Author }}</h2>
+    {{ end -}}
+    {{- if eq . "description" }}
+      <p>{{ $.Site.Params.Description }}</p>
+    {{ end -}}
+    {{- if eq . "about" }}
+      <a class="u-clickable" href="{{ relURL "about/" }}">Read More</a>
+    {{ end -}}
+    {{- if eq . "featured_posts" }}
+      <h2>Featured Posts</h2>
+      <ul>
+      {{- range where $.Site.RegularPages "Params.featured" true }}
+        {{- if ne $title .Title }}
+        <li><a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a></li>
+        {{- end }}
+      {{ end }}
+      </ul>
+    {{ end -}}
+    {{- if eq . "recent_posts" }}
+      <h2>Recent Posts</h2>
+      <ul>
+      {{ range first 8 (where (where $.Site.RegularPages "Type" "in" $.Site.Params.mainSections) ".Params.hidden" "!=" true) }}
+        {{- if ne $title .Title }}
+        <li><a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a></li>
+        {{- end }}
+      {{ end }}
+      </ul>
+    {{ end -}}
+    {{- if eq . "taxonomies" }}
+      <!-- TODO -->
+    {{ end -}}
+    {{- if eq . "hr" }}
+      <hr />
+    {{ end }}
+  </section>
+  {{ end }}
+</aside>
+{{ end }}

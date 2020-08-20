@@ -1,12 +1,12 @@
-name = "Hugo Flex"
+name = "Hugo Flax"
 license = "Apache-2.0"
-licenselink = "https://github.com/de-souza/hugo-flex/blob/master/LICENSE"
+licenselink = "https://github.com/RyanSquared/hugo-flax/blob/master/LICENSE"
 description = "A lightweight Hugo theme leveraging CSS Flexbox"
-homepage = "https://github.com/de-souza/hugo-flex/"
+homepage = "https://github.com/RyanSquared/hugo-flax/"
 tags = ["responsive", "minimal", "flexbox", "no-javascript"]
 features = ["posts"]
 min_version = "0.65"
 
 [author]
-  name = "Léo De Souza"
-  homepage = "https://github.com/de-souza/"
+name = "Ryan Heywood"
+homepage = "https://github.com/RyanSquared"
