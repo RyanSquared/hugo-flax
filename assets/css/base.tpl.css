@@ -57,6 +57,14 @@ code {
   padding-bottom: 0.1rem;
 }
 
+pre code {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+i code {
+  font-style: normal;
+}
+
 article {
   background-color: #EEEEEE;
   border-radius: 0.5rem;
